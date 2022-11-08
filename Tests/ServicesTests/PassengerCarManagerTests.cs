@@ -52,6 +52,14 @@ public class PassengerCarManagerTests
 
         Assert.ThrowsException<ArgumentException>(() => _carManager.GetKmLeftWithPassengers(car, 1, fuel));
     }
+    
+    [TestMethod]
+    public void GetKmLeftWithPassengers_PassengersAreMoreThanSeats_ThrowsException()
+    {
+        var car = _carManager.CreateCar(2, 1, 1);
+
+        Assert.ThrowsException<ArgumentOutOfRangeException>(() => _carManager.GetKmLeftWithPassengers(car, 2, 1));
+    }
 
     [TestMethod]
     public void GetKmLeft_ReturnsCorrectDistance()

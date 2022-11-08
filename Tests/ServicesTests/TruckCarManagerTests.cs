@@ -66,6 +66,14 @@ public class TruckCarManagerTests
     }
     
     [TestMethod]
+    public void GetKmLeftWithLoad_LoadIsMoreThanLoadCapacity_ThrowsException()
+    {
+        var car = _carManager.CreateCar(2, 1, 1);
+
+        Assert.ThrowsException<ArgumentOutOfRangeException>(() => _carManager.GetKmLeftWithLoad(car, 2, 1));
+    }
+    
+    [TestMethod]
     public void GetKmLeft_ReturnsCorrectDistance()
     {
         var car = _carManager.CreateCar(2, 1, 1);
