@@ -28,6 +28,9 @@ public class PassengerCarManager : CarManagerBase
         if (fuel is <= 0 or double.NaN or double.PositiveInfinity)
             throw new ArgumentException("Invalid value", nameof(fuel));
 
+        if (fuel > car.TankCapacity)
+            throw new ArgumentOutOfRangeException(nameof(fuel), "Too much fuel for the car's tank");
+
         var newAvgFuelRate = car.AverageFuelRate;
 
         for (var i = 0; i < passengers; i++)

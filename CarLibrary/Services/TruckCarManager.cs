@@ -31,6 +31,9 @@ public class TruckCarManager : CarManagerBase
 
         if (fuel is <= 0 or double.NaN or double.PositiveInfinity)
             throw new ArgumentException("Invalid value", nameof(fuel));
+        
+        if (fuel > car.TankCapacity)
+            throw new ArgumentOutOfRangeException(nameof(fuel), "Too much fuel for the car's tank");
 
         if (load > car.LoadCapacity)
             throw new ArgumentOutOfRangeException(nameof(load), "Load is more than car's loadcapacity.");

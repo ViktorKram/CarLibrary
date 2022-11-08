@@ -6,6 +6,9 @@ public abstract class CarManagerBase : ICarManager
     {
         if (fuel is <= 0 or double.NaN or double.PositiveInfinity)
             throw new ArgumentException("Invalid value", nameof(fuel));
+        
+        if (fuel > car.TankCapacity)
+            throw new ArgumentOutOfRangeException(nameof(fuel), "Too much fuel for the car's tank");
 
         return fuel / car.AverageFuelRate * 100;
     }
@@ -18,6 +21,9 @@ public abstract class CarManagerBase : ICarManager
         if (fuel is <= 0 or double.NaN or Double.PositiveInfinity)
             throw new ArgumentException("Invalid value", nameof(fuel));
 
+        if (fuel > car.TankCapacity)
+            throw new ArgumentOutOfRangeException(nameof(fuel), "Too much fuel for the car's tank");
+
         if (speed is <= 0 or double.NaN or Double.PositiveInfinity)
             throw new ArgumentException("Invalid value", nameof(speed));
 
@@ -25,9 +31,6 @@ public abstract class CarManagerBase : ICarManager
 
         if (fuelNeeded > fuel)
             throw new ArgumentOutOfRangeException(nameof(fuel), "Fuel amount is less than needed.");
-
-        if (speed == 0)
-            throw new ArgumentOutOfRangeException(nameof(speed));
 
         return distanceByKm / speed;
     }

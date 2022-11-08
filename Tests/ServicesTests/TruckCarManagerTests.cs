@@ -74,6 +74,14 @@ public class TruckCarManagerTests
     }
     
     [TestMethod]
+    public void GetKmLeftWithLoad_FuelIsMoreThanTankCapacity_ThrowsException()
+    {
+        var car = _carManager.CreateCar(1, 1, 1);
+
+        Assert.ThrowsException<ArgumentOutOfRangeException>(() => _carManager.GetKmLeftWithLoad(car, 2, 2));
+    }
+    
+    [TestMethod]
     public void GetKmLeft_ReturnsCorrectDistance()
     {
         var car = _carManager.CreateCar(2, 1, 1);
@@ -95,6 +103,14 @@ public class TruckCarManagerTests
         var car = _carManager.CreateCar(2, 1, 1);
 
         Assert.ThrowsException<ArgumentException>(() => _carManager.GetKmLeft(car, fuel));
+    }
+    
+    [TestMethod]
+    public void GetKmLeft_FuelIsMoreThanTankCapacity_ThrowsException()
+    {
+        var car = _carManager.CreateCar(1, 1, 1);
+
+        Assert.ThrowsException<ArgumentOutOfRangeException>(() => _carManager.GetKmLeft(car, 2));
     }
     
     [TestMethod]
@@ -130,5 +146,23 @@ public class TruckCarManagerTests
 
         Assert.ThrowsException<ArgumentException>(
             () => _carManager.GetTravelTimeInHours(car, distanceByKm, fuel, speed));
+    }
+    
+    [TestMethod]
+    public void GetTravelTimeInHours_FuelIsMoreThanTankCapacity_ThrowsException()
+    {
+        var car = _carManager.CreateCar(1, 1, 1);
+
+        Assert.ThrowsException<ArgumentOutOfRangeException>(
+            () => _carManager.GetTravelTimeInHours(car, 100, 2, 10));
+    }
+    
+    [TestMethod]
+    public void GetTravelTimeInHours_FuelNeededIsMoreThanActualFuel_ThrowsException()
+    {
+        var car = _carManager.CreateCar(1, 1, 1);
+
+        Assert.ThrowsException<ArgumentOutOfRangeException>(
+            () => _carManager.GetTravelTimeInHours(car, 1000, 1, 10));
     }
 }
