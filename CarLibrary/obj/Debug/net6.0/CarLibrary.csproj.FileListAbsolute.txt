@@ -1,0 +1,12 @@
+C:\Users\Viktor\RiderProjects\CarLibrary\CarLibrary\bin\Debug\net6.0\CarLibrary.deps.json
+C:\Users\Viktor\RiderProjects\CarLibrary\CarLibrary\bin\Debug\net6.0\CarLibrary.dll
+C:\Users\Viktor\RiderProjects\CarLibrary\CarLibrary\bin\Debug\net6.0\CarLibrary.pdb
+C:\Users\Viktor\RiderProjects\CarLibrary\CarLibrary\obj\Debug\net6.0\CarLibrary.csproj.AssemblyReference.cache
+C:\Users\Viktor\RiderProjects\CarLibrary\CarLibrary\obj\Debug\net6.0\CarLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Viktor\RiderProjects\CarLibrary\CarLibrary\obj\Debug\net6.0\CarLibrary.AssemblyInfoInputs.cache
+C:\Users\Viktor\RiderProjects\CarLibrary\CarLibrary\obj\Debug\net6.0\CarLibrary.AssemblyInfo.cs
+C:\Users\Viktor\RiderProjects\CarLibrary\CarLibrary\obj\Debug\net6.0\CarLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Viktor\RiderProjects\CarLibrary\CarLibrary\obj\Debug\net6.0\CarLibrary.dll
+C:\Users\Viktor\RiderProjects\CarLibrary\CarLibrary\obj\Debug\net6.0\refint\CarLibrary.dll
+C:\Users\Viktor\RiderProjects\CarLibrary\CarLibrary\obj\Debug\net6.0\CarLibrary.pdb
+C:\Users\Viktor\RiderProjects\CarLibrary\CarLibrary\obj\Debug\net6.0\ref\CarLibrary.dll
